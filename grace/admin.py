@@ -3,58 +3,36 @@ from .models import Church_Gallery, Church_Podcasts, Contact, Church_Event, Chur
 from .forms import ContactForm, CharityForm
 # Register your models here.
 
-class PodcasAdmin(admin.ModelAdmin):
-    list_display = ('title','image', 'audio_file', 'date',)
-    search_fields = ['title','image',]
-
-
-class GalleryAdmin(admin.ModelAdmin):
-    list_display = ('title','image', 'image2','image3','image4','image5','image6',)
-    search_fields = ['title','image',]
 
 class ChurchGalleryAdmin(admin.ModelAdmin):
     list_display = ('title','image', 'image2','image3','image4','image5','image6',)
-    search_fields = ['title','image',]
+    search_fields = ['title','image','image2','image3','image4','image5','image6',]
 
-class EventAdmin(admin.ModelAdmin):
-    list_display = ('title','message', 'date',)
-    search_fields = ['title','image',]
+
 
 class ChurchEventAdmin(admin.ModelAdmin):
     list_display = ('title','message', 'date',)
-    search_fields = ['title','image',]
+    search_fields = ['title','image','date',]
 
-class PodcastAdmin(admin.ModelAdmin):
-    list_display = ('title','audio_image', 'audio_file', 'date',)
-    search_fields = ['title','audio_image',]
 
 
 class ChurchPodcastAdmin(admin.ModelAdmin):
     list_display = ('title','audio_image', 'audio_file', 'date',)
-    search_fields = ['title','audio_image',]
+    search_fields = ['title','audio_image', 'audio_file', 'date',]
 
-class SermonAdmin(admin.ModelAdmin):
-    list_display = ('title','video_link', 'date', 'image',)
-    search_fields = ['title','image',]
 
 
 class ChurchSermonAdmin(admin.ModelAdmin):
     list_display = ('title','video_link', 'date', 'image',)
-    search_fields = ['title','image',]
+    search_fields = ['title','image', 'date', 'image',]
 
 
-class PastorAdmin(admin.ModelAdmin):
-    list_display = ('name','image', 'position', 'fb_account','twitter_account','ig_account',)
-    search_fields = ['name','image','position',]
 
 class ChurchPastorAdmin(admin.ModelAdmin):
     list_display = ('name','image', 'position', 'fb_account','twitter_account','ig_account',)
-    search_fields = ['name','image','position',]
+    search_fields = ['name','image','position','fb_account','twitter_account','ig_account',]
 
 
-class Event_GalleryAdmin(admin.ModelAdmin):
-    list_display = ('image', 'title','date','image2','title2','image3','title3','image4','title4','image5','title5','image6','title6',)
-    search_fields = ['image1', 'title1','date','image2','title2','image3','title3','image4','title4','image5','title5','image6','title6',]
 
 class ChurchEvent_GalleryAdmin(admin.ModelAdmin):
     list_display = ('image', 'title','date','image2','title2','image3','title3','image4','title4','image5','title5','image6','title6',)
