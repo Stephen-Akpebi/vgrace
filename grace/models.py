@@ -24,6 +24,15 @@ class Sermon(models.Model):
         return self.title
 
 
+class Church_Sermon(models.Model):
+    title = models.CharField(max_length=200, unique=False)
+    date = models.DateTimeField(auto_now=True)
+    video_link = models.URLField( max_length=500)
+    image = models.ImageField(upload_to='users/%Y/%m/%d/', blank=False)
+    
+    def __str__(self):
+        return self.title
+
 class Gallery(models.Model):
     title = models.CharField(max_length=200, unique=True)
     image = models.ImageField(upload_to='users/%Y/%m/%d/', blank=True)
@@ -36,6 +45,18 @@ class Gallery(models.Model):
     def __str__(self):
         return self.title
 
+
+class Church_Gallery(models.Model):
+    title = models.CharField(max_length=200, unique=True)
+    image = models.ImageField(upload_to='users/%Y/%m/%d/', blank=True)
+    image2 = models.ImageField(upload_to='users/%Y/%m/%d/', blank=True)
+    image3 = models.ImageField(upload_to='users/%Y/%m/%d/', blank=True)
+    image4 = models.ImageField(upload_to='users/%Y/%m/%d/', blank=True)
+    image5 = models.ImageField(upload_to='users/%Y/%m/%d/', blank=True)
+    image6 = models.ImageField(upload_to='users/%Y/%m/%d/', blank=True)
+    
+    def __str__(self):
+        return self.title
 
 
 class Event_Gallery(models.Model):
@@ -57,8 +78,39 @@ class Event_Gallery(models.Model):
         return self.title
 
 
+class Church_Event_Gallery(models.Model):
+    image = models.ImageField(upload_to='users/%Y/%m/%d/', blank=True)
+    title = models.CharField(max_length=200, unique=True)
+    image2 = models.ImageField(upload_to='users/%Y/%m/%d/', blank=True)
+    title2 = models.CharField(max_length=200, unique=True)
+    image3 = models.ImageField(upload_to='users/%Y/%m/%d/', blank=True)
+    title3 = models.CharField(max_length=200, unique=True)
+    image4 = models.ImageField(upload_to='users/%Y/%m/%d/', blank=True)
+    title4 = models.CharField(max_length=200, unique=True)
+    image5 = models.ImageField(upload_to='users/%Y/%m/%d/', blank=True)
+    title5 = models.CharField(max_length=200, unique=True)
+    image6 = models.ImageField(upload_to='users/%Y/%m/%d/', blank=True)
+    title6 = models.CharField(max_length=200, unique=True)
+    date = models.DateTimeField(auto_now=True)
+    
+    def __str__(self):
+        return self.title
+
+
+
 
 class Event(models.Model):
+    title = models.CharField(max_length=200, unique=True)
+    message = models.TextField(max_length=200, unique=True)
+    image = models.ImageField(upload_to='users/%Y/%m/%d/', blank=True)
+    link = models.URLField( max_length=200)
+    date = models.DateTimeField(auto_now=True)
+    
+    def __str__(self):
+        return self.title
+
+
+class Church_Event(models.Model):
     title = models.CharField(max_length=200, unique=True)
     message = models.TextField(max_length=200, unique=True)
     image = models.ImageField(upload_to='users/%Y/%m/%d/', blank=True)
@@ -98,9 +150,31 @@ class Contact(models.Model):
 
 User = get_user_model()
 
+class Church_Pastors(models.Model):
+    name = models.CharField(max_length=200, unique=True)
+    image = models.ImageField(upload_to='users/%Y/%m/%d/', blank=True)
+    position = models.CharField(max_length=200, unique=True)
+    fb_account = models.CharField(max_length=200, unique=True)
+    twitter_account = models.CharField(max_length=200, unique=True)
+    ig_account = models.CharField(max_length=200, unique=True)
+    
+    def __str__(self):
+        return self.name
+
+
 
 
 class Podcasts(models.Model):
+    audio_file = models.FileField(upload_to='audio/%Y/%m/%d/', null=True, blank=True)
+    audio_image = models.ImageField(upload_to='users/%Y/%m/%d/', blank=True)
+    title = models.CharField(max_length=200, unique=True)
+    date = models.DateTimeField(auto_now=True)
+    
+    def __str__(self):
+        return self.title
+    
+
+class Church_Podcasts(models.Model):
     audio_file = models.FileField(upload_to='audio/%Y/%m/%d/', null=True, blank=True)
     audio_image = models.ImageField(upload_to='users/%Y/%m/%d/', blank=True)
     title = models.CharField(max_length=200, unique=True)

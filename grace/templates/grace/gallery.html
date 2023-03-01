@@ -26,35 +26,35 @@
             <!--/ gallery -->
             <div class="section-top-border">
 				<div class="row gallery-item">
-                    {% for gallery in gallery_list %}
+                    {% for church_gallery in church_gallery_list %}
 					<div class="col-md-4">
-						<a href="{{ gallery.image.url }}" class="img-pop-up">
-							<div class="single-gallery-image" style="background: url({{ gallery.image.url }});"></div>
+						<a href="{{ church_gallery.image.url }}" class="img-pop-up">
+							<div class="single-gallery-image" style="background: url({{ church_gallery.image.url }});"></div>
 						</a>
 					</div>
 					<div class="col-md-4">
-						<a href="{{ gallery.image2.url }}" class="img-pop-up">
-							<div class="single-gallery-image" style="background: url({{ gallery.image2.url }});"></div>
+						<a href="{{ church_gallery.image2.url }}" class="img-pop-up">
+							<div class="single-gallery-image" style="background: url({{ church_gallery.image2.url }});"></div>
 						</a>
 					</div>
 					<div class="col-md-4">
-						<a href="{{ gallery.image3.url }}" class="img-pop-up">
-							<div class="single-gallery-image" style="background: url({{ gallery.image3.url }});"></div>
+						<a href="{{ church_gallery.image3.url }}" class="img-pop-up">
+							<div class="single-gallery-image" style="background: url({{ church_gallery.image3.url }});"></div>
 						</a>
 					</div>
 					<div class="col-md-6">
-						<a href="{{ gallery.image4.url }}" class="img-pop-up">
-							<div class="single-gallery-image" style="background: url({{ gallery.image4.url }});"></div>
+						<a href="{{ church_gallery.image4.url }}" class="img-pop-up">
+							<div class="single-gallery-image" style="background: url({{ church_gallery.image4.url }});"></div>
 						</a>
 					</div>
 					<div class="col-md-6">
-						<a href="{{ gallery.image5.url }}" class="img-pop-up">
-							<div class="single-gallery-image" style="background: url({{ gallery.image5.url }});"></div>
+						<a href="{{ church_gallery.image5.url }}" class="img-pop-up">
+							<div class="single-gallery-image" style="background: url({{ church_gallery.image5.url }});"></div>
 						</a>
 					</div>
 					<div class="col-md-4">
-						<a href="{{ gallery.image6.url }}" class="img-pop-up">
-							<div class="single-gallery-image" style="background: url({{ gallery.image6.url }});"></div>
+						<a href="{{ church_gallery.image6.url }}" class="img-pop-up">
+							<div class="single-gallery-image" style="background: url({{ church_gallery.image6.url }});"></div>
 						</a>
 					</div>
                     {% endfor %}
