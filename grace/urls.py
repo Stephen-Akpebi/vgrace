@@ -26,5 +26,4 @@ urlpatterns = [
     path('live/',views.Live.as_view(),name='live'),
     path('pastors/',views.Pastor.as_view(),name='pastors'),
     path('community/',views.Community.as_view(),name='community'),
-    path('podcast',views.PodcastAPIView.as_view(), name="upload-podcast"),
 ]

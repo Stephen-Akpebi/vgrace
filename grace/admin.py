@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Gallery, Gallery2, Podcasts, Contact, Event, Sermon, Charity, Pastors, Event_Gallery
+from .models import Gallery_main, Podcasts_main, Contact, Event_main, Sermon_main, Charity, Pastors_main, Event_Gallery_main
 from .forms import ContactForm, CharityForm
 # Register your models here.
 
@@ -43,11 +43,11 @@ class ContactAdmin(admin.ModelAdmin):
     contact = ContactForm
     search_fields = ['name', 'email','website','message']
 
-admin.site.register(Gallery,GalleryAdmin )
-admin.site.register(Event_Gallery,Event_GalleryAdmin)
+admin.site.register(Gallery_main,GalleryAdmin )
+admin.site.register(Event_Gallery_main,Event_GalleryAdmin)
 admin.site.register(Contact,ContactAdmin)
-admin.site.register(Podcasts, PodcastAdmin)
-admin.site.register(Event, EventAdmin)
-admin.site.register(Sermon, SermonAdmin)
+admin.site.register(Podcasts_main, PodcastAdmin)
+admin.site.register(Event_main, EventAdmin)
+admin.site.register(Sermon_main, SermonAdmin)
 admin.site.register(Charity, CharityAdmin)
-admin.site.register(Pastors, PastorAdmin)
+admin.site.register(Pastors_main, PastorAdmin)

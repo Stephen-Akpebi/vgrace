@@ -4,7 +4,7 @@ from telnetlib import GA
 from django.shortcuts import render
 from django.views.generic import TemplateView, DetailView
 from django.views import generic
-from .models import Gallery, PodcastSerializer, Sermon , Event , Gallery2, Charity , Pastors, Event_Gallery
+from .models import Gallery_main, Sermon_main , Event_main , Charity , Pastors_main, Event_Gallery_main, Podcasts_main
 from .forms import ContactForm, CharityForm
 from django.views.generic.edit import FormView
 from django.shortcuts import render, redirect
@@ -16,7 +16,6 @@ from .convert_audio_file import convert_to_mp3
 from rest_framework.generics import (UpdateAPIView)
 from rest_framework.response import Response
 from rest_framework import status
-from .models import Podcasts
 from rest_framework import permissions
 from rest_framework.parsers import MultiPartParser
 
@@ -39,7 +38,7 @@ class Give(generic.TemplateView):
 
 
 class Sermon(generic.ListView):
-    queryset = Sermon.objects.all()
+    queryset = Sermon_main.objects.all()
     template_name = 'grace/sermon.html'
 
 class Policy(generic.TemplateView):
@@ -59,12 +58,12 @@ class Community(generic.TemplateView):
     template_name = 'grace/community.html'
 
 class Gallery(generic.ListView):
-    queryset = Gallery.objects.all()
+    queryset = Gallery_main.objects.all()
     template_name = 'grace/gallery.html'
 
 
 class Events(generic.ListView):
-    queryset = Event.objects.all()
+    queryset = Event_main.objects.all()
     template_name = 'grace/events.html'
 
 
@@ -73,12 +72,12 @@ class Calendar(generic.TemplateView):
 
 
 class Event_gallery(generic.ListView):
-    queryset = Event_Gallery.objects.all()
+    queryset = Event_Gallery_main.objects.all()
     template_name = 'grace/gallery2.html'
 
 
 class Pastor(generic.ListView):
-    queryset = Pastors.objects.all()
+    queryset = Pastors_main.objects.all()
     template_name = 'grace/team.html'
 
 
@@ -90,44 +89,11 @@ class Donation(generic.TemplateView):
     template_name = 'grace/donation.html'
 
 class Track(generic.ListView):
-    queryset = Podcasts.objects.all()
+    queryset = Podcasts_main.objects.all()
     template_name  = 'grace/podcast.html'
 
 
 
-class PodcastAPIView(UpdateAPIView):
-    serializer_class = PodcastSerializer
-    permission_classes = (permissions.IsAuthenticated,)
-    parser_classes = [MultiPartParser, ]
-    queryset = Podcasts.objects.all()
-    lookup_field = 'id'
-    
-    def put(self, request, *args, **kwargs):
-            file_obj = request.data
-            temp_audio_file = request.FILES.get('file')
-
-            # Using our custom convert_to_mp3 function to obtain converted file
-            converted_temp_audio_file = convert_to_mp3(temp_audio_file)
-
-            # Adding this file to the serializer
-            file_obj['file'] = converted_temp_audio_file
-            serializer = PodcastSerializer(data=file_obj)
-            if not serializer.is_valid():
-                return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-            # Actual place where we save it to the MEDIA_ROOT (cloud or other)
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-#class Blog(DetailView):
-    #queryset = Post.objects.filter(status=1).order_by('-created_on')
-    #def get_queryset(self):
-        #return super().get_queryset()
-    
-    #template_name = 'blog.html'
-
-
-#class BlogDetail(DetailView):
-    #template_name = 'blog-details.html'
 
 
 class About(generic.TemplateView):
