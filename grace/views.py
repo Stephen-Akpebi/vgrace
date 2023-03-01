@@ -4,7 +4,7 @@ from telnetlib import GA
 from django.shortcuts import render
 from django.views.generic import TemplateView, DetailView
 from django.views import generic
-from .models import Gallery_main, Sermon_main , Event_main , Charity , Pastors_main, Event_Gallery_main, Podcasts_main
+from .models import Gallery, Sermon , Event , Charity , Pastors, Event_Gallery, Podcasts
 from .forms import ContactForm, CharityForm
 from django.views.generic.edit import FormView
 from django.shortcuts import render, redirect
@@ -38,7 +38,7 @@ class Give(generic.TemplateView):
 
 
 class Sermon(generic.ListView):
-    queryset = Sermon_main.objects.all()
+    queryset = Sermon.objects.all()
     template_name = 'grace/sermon.html'
 
 class Policy(generic.TemplateView):
@@ -58,12 +58,12 @@ class Community(generic.TemplateView):
     template_name = 'grace/community.html'
 
 class Gallery(generic.ListView):
-    queryset = Gallery_main.objects.all()
+    queryset = Gallery.objects.all()
     template_name = 'grace/gallery.html'
 
 
 class Events(generic.ListView):
-    queryset = Event_main.objects.all()
+    queryset = Event.objects.all()
     template_name = 'grace/events.html'
 
 
@@ -72,12 +72,12 @@ class Calendar(generic.TemplateView):
 
 
 class Event_gallery(generic.ListView):
-    queryset = Event_Gallery_main.objects.all()
+    queryset = Event_Gallery.objects.all()
     template_name = 'grace/gallery2.html'
 
 
 class Pastor(generic.ListView):
-    queryset = Pastors_main.objects.all()
+    queryset = Pastors.objects.all()
     template_name = 'grace/team.html'
 
 
@@ -89,7 +89,7 @@ class Donation(generic.TemplateView):
     template_name = 'grace/donation.html'
 
 class Track(generic.ListView):
-    queryset = Podcasts_main.objects.all()
+    queryset = Podcasts.objects.all()
     template_name  = 'grace/podcast.html'
 
 

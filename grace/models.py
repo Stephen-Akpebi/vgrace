@@ -164,14 +164,7 @@ class Event_main(models.Model):
     def __str__(self):
         return self.title
 
-class Charity(models.Model):
-    name = models.CharField(max_length=200, unique=True)
-    phone = models.CharField(max_length=200, unique=True)
-    email = models.CharField(max_length=200, unique=True)
-    amount = models.CharField(max_length=200, unique=True)
-    
-    def __str__(self):
-        return self.name
+
 
 class Pastors_main(models.Model):
     name = models.CharField(max_length=200, unique=True)
@@ -184,15 +177,6 @@ class Pastors_main(models.Model):
     def __str__(self):
         return self.name
 
-class Contact(models.Model):
-    name = models.CharField(max_length=200, unique=True)
-    email = models.CharField(max_length=200, unique=True)
-    message = models.TextField(max_length=200, unique=True)
-    
-    def __str__(self):
-        return self.name
-
-User = get_user_model()
 
 
 

@@ -24,7 +24,7 @@
                 <div class="d-inline-block rounded-pill bg-secondary text-white py-1 px-3 mb-3">Podcasts</div>
                 <h1 class="display-6 mb-5">Listen to our podcasts</h1>
             </div>
-            {% for podcasts_main in podcasts_main_list %}
+            {% for podcasts in podcasts_list %}
             <div class="row align-items-center justify-content-center mb-20">
                 <div class="col-xl-10">
                     <div class="row align-items-center">
@@ -32,11 +32,11 @@
                             <div class="music_field">
                                     <div class="audio_name">
                                         <div class="name">
-                                            <h4>{{ podcasts_main.title }}</h4>
-                                            <p>{{ podcasts_main.date }}</p>
+                                            <h4>{{ podcasts.title }}</h4>
+                                            <p>{{ podcasts.date }}</p>
                                         </div>
                                             <audio preload="auto" controls>
-                                                <source src="{{ podcasts_main.audio_file.url }}">
+                                                <source src="{{ podcasts.audio_file.url }}">
                                             </audio>
                                         
                                     </div>
