@@ -21,10 +21,10 @@ django-crispy-forms==1.14.0
 django-debug-toolbar==3.6.0
 django-decouple==2.1
 django-environ==0.8.1
-django-forestadmin==1.4.3
 django-heroku==0.3.1
 django-ipware==4.0.2
 django-sslserver==0.22
+djangorestframework==3.14.0
 docker==6.0.0
 ecdsa==0.18.0
 filelock==3.7.1
