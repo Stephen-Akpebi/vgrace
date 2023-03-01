@@ -1,0 +1,85 @@
+{% block track %}
+{% load static %}
+
+    <!--/ bradcam_area  -->
+    <!-- music_area  -->
+    <div class="music_area music_gallery inc_padding">
+        <div class="container">
+            {% for podcasts in podcasts_list %}
+            <div class="row align-items-center justify-content-center mb-20">
+                <div class="col-xl-10">
+                    <div class="row align-items-center">
+                                <div class="col-xl-9 col-md-9">
+                                    <div class="music_field">
+                                            <div class="thumb">
+                                                    <img src="{{ podcasts.audio_image.url }}" alt="">
+                                                </div>
+                                                <div class="audio_name">
+                                                    <div class="name">
+                                                        <h4>{{ podcasts.title }}</h4>
+                                                        <p>{{ podcasts.date }}</p>
+                                                    </div>
+                                                        <audio preload="auto" controls>
+                                                                <source src="{{ podcasts.audio_file }}">
+                                                            </audio>
+                                                            
+                                                </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-md-3">
+                                    <div class="music_btn">
+                                        <a class="btn btn-outline-primary py-2 px-3" href="">
+                                            <i class="fa fa-podcast"></i>  podcast
+                                            <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
+                                                <i class="fa fa-arrow-right"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                    </div>
+                </div>
+
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="music_area music_gallery inc_padding">
+        <div class="container">
+            {% for podcasts in podcasts_list %}
+            <div class="row align-items-center justify-content-center mb-20">
+                <div class="col-xl-10">
+                    <div class="row align-items-center">
+                        <div class="col-xl-9 col-md-9">
+                            <div class="music_field">
+                                    <div class="thumb">
+                                        
+                                    </div>
+                                    <div class="audio_name">
+                                        <div class="name">
+                                            <h4>{{ podcasts.title }}</h4>
+                                            <p>{{ podcasts.date }}</p>
+                                        </div>
+                                            <audio preload="auto" controls>
+                                                <source src="{{ podcasts.audio_file.url }}">
+                                            </audio>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-3">
+                            <div class="music_btn">
+                                <a class="btn btn-outline-primary py-2 px-3" href="">
+                                    <i class="fa fa-podcast"></i>  podcast
+                                    <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
+                                        <i class="fa fa-arrow-right"></i>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            {% endfor %}
+        </div>
+    {% endblock track %}
