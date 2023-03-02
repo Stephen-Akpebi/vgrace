@@ -5,8 +5,8 @@ from .forms import ContactForm, CharityForm
 
 
 class ChurchGalleryAdmin(admin.ModelAdmin):
-    list_display = ('title','image', 'image2','image3','image4','image5','image6',)
-    search_fields = ['title','image','image2','image3','image4','image5','image6',]
+    list_display = ('title','image', )
+    search_fields = ['title','image',]
 
 
 
@@ -35,8 +35,8 @@ class ChurchPastorAdmin(admin.ModelAdmin):
 
 
 class ChurchEvent_GalleryAdmin(admin.ModelAdmin):
-    list_display = ('image', 'title','date','image2','title2','image3','title3','image4','title4','image5','title5','image6','title6',)
-    search_fields = ['image1', 'title1','date','image2','title2','image3','title3','image4','title4','image5','title5','image6','title6',]
+    list_display = ('image', 'title','date',)
+    search_fields = ['image1', 'title1','date',]
 
 
 class CharityAdmin(admin.ModelAdmin):

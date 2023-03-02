@@ -49,11 +49,6 @@ class Gallery(models.Model):
 class Church_Gallery(models.Model):
     title = models.CharField(max_length=200, unique=True)
     image = models.ImageField(upload_to='users/%Y/%m/%d/', blank=True)
-    image2 = models.ImageField(upload_to='users/%Y/%m/%d/', blank=True)
-    image3 = models.ImageField(upload_to='users/%Y/%m/%d/', blank=True)
-    image4 = models.ImageField(upload_to='users/%Y/%m/%d/', blank=True)
-    image5 = models.ImageField(upload_to='users/%Y/%m/%d/', blank=True)
-    image6 = models.ImageField(upload_to='users/%Y/%m/%d/', blank=True)
     
     def __str__(self):
         return self.title
@@ -81,16 +76,6 @@ class Event_Gallery(models.Model):
 class Church_Event_Gallery(models.Model):
     image = models.ImageField(upload_to='users/%Y/%m/%d/', blank=True)
     title = models.CharField(max_length=200, unique=True)
-    image2 = models.ImageField(upload_to='users/%Y/%m/%d/', blank=True)
-    title2 = models.CharField(max_length=200, unique=True)
-    image3 = models.ImageField(upload_to='users/%Y/%m/%d/', blank=True)
-    title3 = models.CharField(max_length=200, unique=True)
-    image4 = models.ImageField(upload_to='users/%Y/%m/%d/', blank=True)
-    title4 = models.CharField(max_length=200, unique=True)
-    image5 = models.ImageField(upload_to='users/%Y/%m/%d/', blank=True)
-    title5 = models.CharField(max_length=200, unique=True)
-    image6 = models.ImageField(upload_to='users/%Y/%m/%d/', blank=True)
-    title6 = models.CharField(max_length=200, unique=True)
     date = models.DateTimeField(auto_now=True)
     
     def __str__(self):
